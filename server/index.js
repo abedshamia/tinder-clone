@@ -49,11 +49,7 @@ app.post('/signup', async (req, res) => {
 
     const token = jwt.sign(insertedUser, process.env.JWT_SECRET, {expiresIn: 60 * 24});
 
-    res.status(201).json({
-      token,
-      userId: generatedUserId,
-      email: sanitizedEmail,
-    });
+    res.status(201).json({token});
   } catch (error) {
     console.log(error);
     res.status(500).send('Something went wrong');
@@ -75,7 +71,7 @@ app.post('/login', async (req, res) => {
     if (user && correctPassword) {
       const token = jwt.sign(user, process.env.JWT_SECRET, {expiresIn: 60 * 24});
 
-      res.status(201).json({token, userId: user.user_id, email});
+      res.status(201).json({token});
     }
 
     res.status(400).send('Invalid Credentials');

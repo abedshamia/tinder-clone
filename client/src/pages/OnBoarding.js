@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import Nav from '../components/Nav';
+import {useCookies} from 'react-cookie';
 
 const OnBoarding = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
   const [formData, setFormData] = useState({
-    user_id: '',
     first_name: '',
     dob_day: '',
     dob_month: '',
@@ -11,7 +12,6 @@ const OnBoarding = () => {
     show_gender: false,
     gender_identity: 'man',
     gender_interest: 'woman',
-    email: '',
     url: '',
     about: '',
     matches: [],
@@ -169,11 +169,11 @@ const OnBoarding = () => {
           </section>
 
           <section>
-            <label htmlFor="about">Profile Photos</label>
+            <label htmlFor="about">Profile Photo</label>
             <input type="url" name="url" id="url" onChange={handleChange} required={true} />
 
             <div className="photo-container">
-              <img src={formData.url} alt="profile pic preview" />
+              {formData.url && <img src={formData.url} alt="profile pic preview" />}
             </div>
           </section>
         </form>
