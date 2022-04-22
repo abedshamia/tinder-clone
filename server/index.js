@@ -51,7 +51,7 @@ app.post('/signup', async (req, res) => {
 
     res.status(201).json({
       token,
-      user_id: generatedUserId,
+      userId: generatedUserId,
       email: sanitizedEmail,
     });
   } catch (error) {
