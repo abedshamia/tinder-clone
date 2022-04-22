@@ -129,3 +129,133 @@ nav .nav-button:disabled {
   margin: 8px;
   font-size: 17px;
 }
+
+/* OnBoarding Page  */
+
+.onboarding {
+  border-top: solid 1px rgb(154, 154, 154);
+}
+.onboarding form {
+  display: flex;
+  justify-content: center;
+}
+
+.onboarding form section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 35%;
+  text-align: start;
+}
+
+.onboarding form input {
+  padding: 15px 30px;
+  margin: 10px 0;
+  font-size: 15px;
+  border: solid 2px rgb(219, 219, 219);
+  border-radius: 10px;
+}
+
+.onboarding form label {
+  margin: 10px 0;
+}
+
+.onboarding form input::-webkit-outer-spin-button,
+.onboarding form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.onboarding form .multiple-input-container {
+  display: flex;
+}
+
+.onboarding form .multiple-input-container input {
+  margin-right: 10px;
+}
+
+.onboarding form .multiple-input-container label {
+  padding: 10px;
+  border: solid 2px rgb(144, 144, 144);
+  border-radius: 10px;
+  transition: all 0.3s;
+  margin-right: 10px;
+}
+
+.onboarding form input[type='number'] {
+  width: 20%;
+}
+
+.onboarding form .multiple-input-container input[type='radio'] {
+  display: none;
+}
+
+.onboarding form input[type='radio']:checked + label {
+  border: solid 2px rgb(221, 39, 22);
+}
+.onboarding form button {
+  color: rgb(121, 119, 119);
+  background-color: #fff;
+  font-weight: 500px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: solid 2px rgb(121, 119, 119);
+  margin: 6px;
+  cursor: pointer;
+}
+.onboarding form button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.onboarding form button:active {
+  background-color: rgb(226, 115, 155);
+}
+
+.onboarding form .photo-container img {
+  width: 100%;
+}
+
+/* Dashboard  */
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard .swipe-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.swipe {
+  position: absolute;
+}
+
+.dashboard .card-container {
+  width: 400px;
+  height: 650px;
+}
+
+.card {
+  width: 400px;
+  height: 650px;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.dashboard .swipe-info {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
