@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const {MongoClient} = require('mongodb');
-const uri =
-  'mongodb+srv://abedshamia:0597997119abed@cluster0.duoa4.mongodb.net/Cluster0?retryWrites=true&w=majority';
+const uri = process.env.DB_URI;
+
 const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
