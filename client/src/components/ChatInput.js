@@ -16,8 +16,8 @@ const ChatInput = ({user, clickedUser, getUsersMessages, getClickedUsersMessages
 
     try {
       await axios.post('http://localhost:5000/message', {message});
-      getClickedUsersMessages();
       getUsersMessages();
+      getClickedUsersMessages();
       setTextArea('');
     } catch (error) {
       console.log(error);

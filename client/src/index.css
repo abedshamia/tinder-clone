@@ -20,6 +20,7 @@ body {
   padding: 12px 30px;
   border-radius: 30px;
   border: none;
+  cursor: pointer;
 }
 
 .primary-title {
@@ -39,6 +40,7 @@ h2 {
 
 .home .primary-button {
   margin-top: 1.4rem;
+  cursor: pointer;
 }
 
 /*  Navbar  */
@@ -78,6 +80,7 @@ nav .nav-button {
   border-radius: 10px;
   border: none;
   margin: 10px;
+  cursor: pointer;
 }
 
 nav .nav-button:disabled {
@@ -89,8 +92,8 @@ nav .nav-button:disabled {
 .auth-modal {
   position: absolute;
   top: 40px;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 360px;
   height: 600px;
   background-color: #fff;
@@ -112,6 +115,7 @@ nav .nav-button:disabled {
   border-radius: 30px;
   border: solid 2px rgb(121, 119, 119);
   margin: 6px;
+  cursor: pointer;
 }
 
 .secondary-button:hover {
@@ -297,6 +301,7 @@ nav .nav-button:disabled {
   align-items: center;
   color: rgb(255, 255, 255);
   padding: 20px;
+  cursor: pointer;
 }
 
 .img-container {
@@ -308,6 +313,7 @@ nav .nav-button:disabled {
 }
 .img-container img {
   width: 100%;
+  cursor: pointer;
 }
 
 /* Chat Display  */

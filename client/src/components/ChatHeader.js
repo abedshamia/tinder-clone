@@ -1,12 +1,14 @@
 import React from 'react';
 import {useCookies} from 'react-cookie';
+import {useNavigate} from 'react-router-dom';
 
 const ChatHeader = ({user}) => {
   const [cookie, setCookie, removeCookie] = useCookies(['user']);
+  let navigate = useNavigate();
   const logout = () => {
     removeCookie('UserId', cookie.UserId);
     removeCookie('AuthToken', cookie.AuthToken);
-    window.location.reload();
+    navigate('/');
   };
   return (
     <div className="chat-container-header">

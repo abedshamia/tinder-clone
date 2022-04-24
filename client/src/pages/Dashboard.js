@@ -11,12 +11,10 @@ const Dashboard = () => {
 
   const userId = cookie.UserId;
 
-  const getUser = async controller => {
-    const signal = controller.signal;
+  const getUser = async () => {
     try {
       const response = await axios.get('http://localhost:5000/user', {
         params: {userId},
-        signal,
       });
 
       setUser(response.data);
@@ -25,26 +23,26 @@ const Dashboard = () => {
     }
   };
 
-  const getGenderedUsers = async controller => {
-    const signal = controller.signal;
+  const getGenderedUsers = async () => {
     try {
       const response = await axios.get('http://localhost:5000/gendered-users', {
         params: {gender: user?.gender_interest},
-        signal,
       });
       setGenderedUsers(response.data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   React.useEffect(() => {
-    const controller = new AbortController();
-    getUser(controller);
-    getGenderedUsers(controller);
+    getUser();
+  }, []);
 
-    return () => {
-      controller.abort();
-    };
-  }, [user, genderedUsers]);
+  React.useEffect(() => {
+    if (user) {
+      getGenderedUsers();
+    }
+  }, [user]);
 
   const [lastDirection, setLastDirection] = useState();
 
