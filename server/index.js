@@ -188,7 +188,6 @@ app.get('/users', async (req, res) => {
     ];
 
     const foundUsers = await users.aggregate(pipeLine).toArray();
-    console.log(foundUsers);
     res.send(foundUsers);
   } finally {
     await client.close();
@@ -211,6 +210,22 @@ app.get('/messages', async (req, res) => {
 
     const foundMessages = await messages.find(query).toArray();
     res.send(foundMessages);
+  } finally {
+    await client.close();
+  }
+});
+
+app.post('/message', async (req, res) => {
+  const client = new MongoClient(uri);
+  const message = req.body.message;
+
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const messages = database.collection('messages');
+
+    const insertedMessage = await messages.insertOne(message);
+    res.status(201).send(insertedMessage);
   } finally {
     await client.close();
   }

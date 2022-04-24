@@ -40,7 +40,6 @@ const AuthModal = ({setShowModal, isSignup}) => {
     }
   };
 
-  console.log(email, password, confirmPassword);
   return (
     <div className="auth-modal">
       <div className="close-icon" onClick={handleClick}>

@@ -21,7 +21,6 @@ const OnBoarding = () => {
     matches: [],
   });
   const handleSubmit = async e => {
-    console.log('clicked');
     e.preventDefault();
 
     try {
@@ -39,8 +38,6 @@ const OnBoarding = () => {
       ...prevState,
       [name]: type === 'checkbox' ? checked : value,
     }));
-
-    console.log(formData);
   };
   return (
     <>
